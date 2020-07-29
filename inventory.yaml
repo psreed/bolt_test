@@ -1,0 +1,49 @@
+---
+groups:
+- name: windows
+  targets:
+  - psrwin0.classroom.puppet.com
+  - psrwin1.classroom.puppet.com
+  - psrwin2.classroom.puppet.com
+  - psrwin3.classroom.puppet.com
+  - psrwin4.classroom.puppet.com
+  config:
+    transport: winrm
+    winrm:
+      ssl: false
+      user: puppetinstructor
+      password: '@Pupp3t1abs'
+- name: linux
+  targets:
+  - psrnix0.classroom.puppet.com
+  - psrnix1.classroom.puppet.com
+  - psrnix2.classroom.puppet.com
+  - psrnix3.classroom.puppet.com
+  - psrnix4.classroom.puppet.com
+  config:
+    transport: ssh
+    ssh:
+      host-key-check: false
+      user: centos
+      run-as: root
+      private-key: ~/.ssh/student.pem
+- name: master
+  targets:
+  - psrmaster0.classroom.puppet.com
+  config:
+    transport: ssh
+    ssh:
+      host-key-check: false
+      user: centos
+      run-as: root
+      private-key: ~/.ssh/training.pem
+- name: gitlab
+  targets:
+  - psrgitlab0.classroom.puppet.com
+  config:
+    transport: ssh
+    ssh:
+      host-key-check: false
+      user: centos
+      run-as: root
+      private-key: ~/.ssh/training.pem

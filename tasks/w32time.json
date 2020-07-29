@@ -1,0 +1,4 @@
+{
+  "description": "Display the w32time service status",
+  "input_method": "stdin"
+}

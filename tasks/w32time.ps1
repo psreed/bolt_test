@@ -1,0 +1,1 @@
+(get-service w32time).status
