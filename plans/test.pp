@@ -44,12 +44,12 @@ plan bolt_test::test (
   # This runs a Puppet "apply" block on all targets.
   if $run_apply_block {
 
-    apply($targets) {
+    $results = apply($targets) {
       if ($facts['kernel']=='Linux') {
         notice("I am a Linux box: ${facts['hostname']}")
       }
     }
-
+    return $results
   }
 
 }
